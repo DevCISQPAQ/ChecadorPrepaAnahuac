@@ -1,0 +1,71 @@
+h4 {
+    margin: 0;
+}
+
+h2{
+    color: #5E7B96;
+
+}
+
+.w-full {
+    width: 100%;
+}
+
+.w-half {
+    width: 50%;
+}
+
+body {
+    /* font-family: DejaVu Sans, sans-serif;
+    font-size: 12px; */
+    margin-bottom: 100px; /* espacio para footer fijo */
+}
+
+.margin-top {
+    margin-top: 1.25rem;
+}
+
+.footer {
+    position: fixed;
+    bottom: 2.5rem;
+    text-align: center; 
+    left: 0;
+    right: 0;
+    font-size: 0.875rem;
+    padding: 1rem;
+    background-color: #f1f5f9;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+table.products {
+    font-size: 0.875rem;
+}
+
+table.products tr {
+    background-color: #60a5fa;
+}
+
+table.products th {
+    color: #ffffff;
+    padding: 0.5rem;
+}
+
+table tr.items {
+    background-color: rgb(241 245 249);
+}
+
+table tr.items td {
+    padding: 0.5rem;
+    text-align: center;
+    
+}
+
+.total {
+    text-align: right;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+}
