@@ -23,8 +23,8 @@
 
     <!-- Tarjeta para Prescolar -->
     <div class="bg-orange-300 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
-        <h3 class="text-xl font-semibold text-[#7a00bf]">Profesorado</h3>
-        <p class="text-2xl font-bold text-[#e51817]">{{ $preescolarCount ?? 0}}</p>
+        <h3 class="text-xl font-semibold text-[#7a00bf]">Preparatoria</h3>
+        <p class="text-2xl font-bold text-[#e51817]">{{ $preparatoriaCount ?? 0}}</p>
     </div>
 
     <!-- Tarjeta para Promocion -->
@@ -104,7 +104,7 @@
                         <th class="p-3 text-center text-white">Puesto</th>
                         <th class="p-3 text-center text-white">Email</th>
                         <template x-if="editarActivo">
-                            <th class="p-3">Acciones</th>
+                            <th class="p-3 text-white ">Acciones</th>
                         </template>
                     </tr>
                 </thead>

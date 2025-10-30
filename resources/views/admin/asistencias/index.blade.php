@@ -70,7 +70,7 @@
                         <option value="academia" {{ request('departamento') == 'academia' ? 'selected' : '' }}>Academia</option>
                         <option value="administracion" {{ request('departamento') == 'administracion' ? 'selected' : '' }}>Administración</option>
                         <option value="direccion" {{ request('departamento') == 'direccion' ? 'selected' : '' }}>Dirección</option>
-                        <option value="preescolar" {{ request('departamento') == 'preescolar' ? 'selected' : '' }}>Preescolar</option>
+                        <option value="Preparatoria" {{ request('departamento') == 'Preparatoria' ? 'selected' : '' }}>Preparatoria</option>
                         <option value="promocion" {{ request('departamento') == 'promocion' ? 'selected' : '' }}>Promoción</option>
                        
                         <option value="mantenimiento" {{ request('departamento') == 'mantenimiento' ? 'selected' : '' }}>Mantenimiento</option>

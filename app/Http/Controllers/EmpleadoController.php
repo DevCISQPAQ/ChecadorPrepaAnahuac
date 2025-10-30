@@ -50,15 +50,9 @@ class EmpleadoController extends Controller
 
     private function obtenerConteosPorDepartamento()
     {
-        $preescolarCount = Empleado::where(function ($query) {
-            $query->where('departamento', 'LIKE', '%preescolar%');
+        $preparatoriaCount = Empleado::where(function ($query) {
+            $query->where('departamento', 'LIKE', '%preparatoria%');
         })->count();
-
-        $primariaCount = Empleado::where('departamento', 'LIKE', '%primaria%')
-            ->count();
-
-        $secundariaCount = Empleado::where('departamento', 'LIKE', '%secundaria%')
-            ->count();
 
         $administrativosCount = Empleado::where('departamento', 'LIKE', '%administracion%')
             ->count();
@@ -77,7 +71,7 @@ class EmpleadoController extends Controller
 
         $totales_empleados = Empleado::query()->count();
 
-        return compact('preescolarCount', 'primariaCount', 'secundariaCount', 'administrativosCount', 'academiasCount','promocionCount', 'mantenimientoCount','direccionCount', 'totales_empleados');
+        return compact('preparatoriaCount', 'administrativosCount', 'academiasCount','promocionCount', 'mantenimientoCount','direccionCount', 'totales_empleados');
     }
 
     public function crearEmpleado()

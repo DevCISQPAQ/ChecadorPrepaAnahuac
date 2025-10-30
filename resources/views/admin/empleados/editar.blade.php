@@ -53,10 +53,8 @@
                     <option value="Academia" {{ $empleado->departamento === 'Academia' ? 'selected' : '' }}>Academia</option>
                     <option value="Administración" {{ $empleado->departamento === 'Administración' ? 'selected' : '' }}>Administración</option>
                     <option value="Dirección" {{ $empleado->departamento === 'Dirección' ? 'selected' : '' }}>Dirección</option>
-                    <option value="Preescolar" {{ $empleado->departamento === 'Preescolar' ? 'selected' : '' }}>Preescolar</option>
-                    <option value="Primaria" {{ $empleado->departamento === 'Primaria' ? 'selected' : '' }}>Primaria</option>
+                    <option value="Preparatoria" {{ $empleado->departamento === 'Preparatoria' ? 'selected' : '' }}>Preparatoria</option>
                     <option value="Promoción" {{ $empleado->departamento === 'Promoción' ? 'selected' : '' }}>Promoción</option>
-                    <option value="Secundaria" {{ $empleado->departamento === 'Secundaria' ? 'selected' : '' }}>Secundaria</option>
                     <option value="Mantenimiento" {{ $empleado->departamento === 'Mantenimiento' ? 'selected' : '' }}>Mantenimiento</option>
                 </select>
             </div>

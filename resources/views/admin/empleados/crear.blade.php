@@ -46,7 +46,7 @@
                     <option value="Academia">Academia</option>
                     <option value="Administración">Administración</option>
                     <option value="Dirección">Dirección</option>
-                    <option value="Preescolar">Preescolar</option>
+                    <option value="Preparatoria">Preparatoria</option>
                     <option value="Promoción">Promoción</option>
                     <option value="Mantenimiento">Mantenimiento</option>
                 </select>

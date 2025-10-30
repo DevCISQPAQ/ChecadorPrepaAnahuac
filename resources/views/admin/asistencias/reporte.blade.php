@@ -42,10 +42,10 @@ if(isset($asistencias[0]) && $asistencias[0] instanceof \App\Models\Empleado) {
     <table class="w-full">
         <tr>
             <td class="w-half">
-                <img src="{{ public_path('img/escudo-gris.svg') }}" alt="Logo" style="width: .5rem;">
+                <img src="{{ public_path('img/aorange.svg') }}" alt="Logo" style="width: 5rem;">
             </td>
             <td class="w-half">
-                <h2>Cumbres International School</h2>
+                <h2>Prepa Anáhuac Querétaro</h2>
             </td>
         </tr>
     </table>
@@ -143,7 +143,7 @@ if(isset($asistencias[0]) && $asistencias[0] instanceof \App\Models\Empleado) {
     </div>
 
     <footer class="footer">
-        <div>&copy; Cumbres International School</div>
+        <div>&copy; Prepa Anáhuac</div>
         <div>Documento generado automáticamente por el sistema.</div>
     </footer>
 </body>
