@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="shortcut icon" type="image/svg" href="{{ asset('/img/sello-cumbres-en-blanco-01.png') }}">
-    <link rel="shortcut icon" sizes="192x192" href="{{ asset('/img/sello-cumbres-en-blanco-01.png') }}">
+    <link rel="shortcut icon" type="image/svg" href="{{ asset('/img/aorange.png') }}">
+    <link rel="shortcut icon" sizes="192x192" href="{{ asset('/img/aorange.png') }}">
 </head>
 
 <body x-data="{
@@ -28,10 +28,10 @@
     <div class="flex-1 flex flex-col w-full">
 
         {{-- Header superior --}}
-        <header class="bg-white shadow px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div class="flex items-center gap-4">
+        <header class="bg-[#ff5900] shadow px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 ">
+            <div class="flex items-center gap-4 ">
                 {{-- Botón hamburguesa visible solo en móviles --}}
-                <button @click="toggleSidebar" class="md:hidden text-gray-700">
+                <button @click="toggleSidebar" class="md:hidden text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -39,7 +39,7 @@
                     </svg>
                 </button>
 
-                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">
+                <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white">
                     Control de Asistencias
                 </h1>
             </div>
@@ -51,7 +51,7 @@
                 </form>
 
                 <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                    class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+                    class="bg-white hover:bg-red-600 text-[#ff5900] px-4 py-2 rounded">
                     Cerrar sesión
                 </button>
             </div>
@@ -71,7 +71,7 @@
 
     <!-- Loader general -->
     <div id="loader" style="display:none; position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(255,255,255,0.7); z-index:9999; align-items:center;justify-content:center;">
-        <div class="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+        <div class="w-16 h-16 border-4 border-[#ff5900] border-dashed rounded-full animate-spin"></div>
     </div>
 
 </body>

@@ -50,14 +50,14 @@
 
         <div class="mb-4">
             <label class="inline-flex items-center">
-                <input type="checkbox" name="yes_notifications" value="1" class="form-checkbox text-blue-600">
+                <input type="checkbox" name="yes_notifications" value="1" class="form-checkbox text-orange-600">
                 <span class="ml-2 text-sm text-gray-700">Recibir notificaciones</span>
             </label>
         </div>
 
         <div class="flex justify-end">
             <a href="{{ route('admin.preferencias') }}" class="px-4 py-2 text-gray-600 hover:underline">Cancelar</a>
-            <button type="submit" class="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+            <button type="submit" class="ml-4 bg-[#ff5900] hover:bg-orange-700 text-white px-4 py-2 rounded">
                 Guardar
             </button>
         </div>

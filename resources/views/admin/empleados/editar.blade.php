@@ -94,14 +94,14 @@
            file:mr-4 file:py-2 file:px-4
            file:rounded file:border-0
            file:text-sm file:font-semibold
-           file:bg-blue-100 file:text-blue-700
-           hover:file:bg-blue-200
+           file:bg-orange-200 file:text-white
+           hover:file:bg-orange-400
            cursor-pointer">
         </div>
 
         <div class="flex justify-end">
             <a href="{{ route('admin.empleados') }}" class="px-4 py-2 text-gray-600 hover:underline">Cancelar</a>
-            <button type="submit" class="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+            <button type="submit" class="ml-4 bg-[#ff5900] hover:bg-orange-700 text-white px-4 py-2 rounded">
                 Actualizar
             </button>
         </div>

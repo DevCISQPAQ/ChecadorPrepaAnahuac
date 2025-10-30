@@ -1,58 +1,49 @@
 @extends('layouts.admin')
 
 @section('content')
-<h2 class="text-2xl font-semibold text-gray-800 mb-6">Lista de Empleados</h2>
+<h2 class="text-2xl font-bold mb-6">Lista de Empleados</h2>
 
 <!-- Tarjetas de conteo de empleados por secciones -->
-<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-2 md:gap-4 md:space-y-0 space-y-2">
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 md:space-y-0 space-y-2">
     <!-- Tarjeta para Academia -->
-    <div class="bg-blue-100 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
-        <h3 class="text-xl font-semibold text-blue-600">Academia</h3>
-        <p class="text-2xl font-bold text-gray-800">{{ $academiasCount ?? 0 }}</p>
+    <div class="bg-orange-300 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
+        <h3 class="text-xl font-semibold text-[#7a00bf]">Academia</h3>
+        <p class="text-2xl font-bold text-[#e51817]">{{ $academiasCount ?? 0 }}</p>
     </div>
     <!-- Tarjeta para Administrativo -->
-    <div class="bg-blue-100 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
-        <h3 class="text-xl font-semibold text-blue-600">Administración</h3>
-        <p class="text-2xl font-bold text-gray-800">{{ $administrativosCount ?? 0 }}</p>
+    <div class="bg-orange-300 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
+        <h3 class="text-xl font-semibold text-[#7a00bf]">Administración</h3>
+        <p class="text-2xl font-bold text-[#e51817]">{{ $administrativosCount ?? 0 }}</p>
     </div>
     <!-- Tarjeta para Direccion -->
-    <div class="bg-blue-100 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
-        <h3 class="text-xl font-semibold text-blue-600">Dirección</h3>
-        <p class="text-2xl font-bold text-gray-800">{{ $direccionCount ?? 0 }}</p>
+    <div class="bg-orange-300 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
+        <h3 class="text-xl font-semibold text-[#7a00bf]">Dirección</h3>
+        <p class="text-2xl font-bold text-[#e51817]">{{ $direccionCount ?? 0 }}</p>
     </div>
 
     <!-- Tarjeta para Prescolar -->
-    <div class="bg-blue-100 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
-        <h3 class="text-xl font-semibold text-blue-600">Preescolar</h3>
-        <p class="text-2xl font-bold text-gray-800">{{ $preescolarCount ?? 0}}</p>
+    <div class="bg-orange-300 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
+        <h3 class="text-xl font-semibold text-[#7a00bf]">Profesorado</h3>
+        <p class="text-2xl font-bold text-[#e51817]">{{ $preescolarCount ?? 0}}</p>
     </div>
 
-    <!-- Tarjeta para Primaria -->
-    <div class="bg-blue-100 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
-        <h3 class="text-xl font-semibold text-blue-600">Primaria</h3>
-        <p class="text-2xl font-bold text-gray-800">{{ $primariaCount ?? 0 }}</p>
-    </div>
     <!-- Tarjeta para Promocion -->
-    <div class="bg-blue-100 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
-        <h3 class="text-xl font-semibold text-blue-600">Promoción</h3>
-        <p class="text-2xl font-bold text-gray-800">{{ $promocionCount ?? 0 }}</p>
+    <div class="bg-orange-300 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
+        <h3 class="text-xl font-semibold text-[#7a00bf]">Promoción</h3>
+        <p class="text-2xl font-bold text-[#e51817]">{{ $promocionCount ?? 0 }}</p>
     </div>
 
-    <!-- Tarjeta para Secundaria -->
-    <div class="bg-blue-100 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
-        <h3 class="text-xl font-semibold text-blue-600">Secundaria</h3>
-        <p class="text-2xl font-bold text-gray-800">{{ $secundariaCount ?? 0 }}</p>
-    </div>
-    <!-- Tarjeta para Secundaria -->
-    <div class="bg-blue-100 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
-        <h3 class="text-xl font-semibold text-blue-600">Mantenimiento</h3>
-        <p class="text-2xl font-bold text-gray-800">{{ $mantenimientoCount ?? 0 }}</p>
+    
+    <!-- Tarjeta para Mantenimiento -->
+    <div class="bg-orange-300 p-2 rounded shadow-lg text-center flex-1 min-w-[100px] sm:basis-[calc(15%-1rem)]">
+        <h3 class="text-xl font-semibold text-[#7a00bf]">Mantenimiento</h3>
+        <p class="text-2xl font-bold text-[#e51817]">{{ $mantenimientoCount ?? 0 }}</p>
     </div>
 
     <!-- totales -->
-    <div class="bg-blue-100 p-2 rounded shadow-lg text-center flex-1 min-w-[200px] sm:basis-[calc(15%-1rem)]">
+    <div class="bg-orange-300 p-2 rounded shadow-lg text-center flex-1 min-w-[200px] sm:basis-[calc(15%-1rem)]">
         <h3 class="text-xl font-semibold text-green-600">Total de empleados</h3>
-        <p class="text-2xl font-bold text-gray-800">{{ $totales_empleados ?? 0 }}</p>
+        <p class="text-2xl font-bold text-[#e51817]">{{ $totales_empleados ?? 0 }}</p>
     </div>
 </div>
 
@@ -69,11 +60,11 @@
                     class="px-4 py-2 border rounded w-full md:w-1/2 focus:outline-none focus:ring focus:border-blue-300"
                     value="{{ request('buscar') }}" />
 
-                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded w-full md:w-auto">Buscar</button>
+                <button type="submit" class="px-4 py-2 bg-[#ff5900] text-white rounded w-full md:w-auto">Buscar</button>
 
                 @if(request()->has('buscar') && request('buscar') !== '')
                 <a href="{{ route('admin.empleados') }}"
-                    class="px-4 py-2 bg-red-600 rounded hover:bg-red-400 text-white w-full md:w-auto text-center">
+                    class="px-4 py-2 bg-[#e51817] rounded hover:bg-red-400 text-white w-full md:w-auto text-center">
                     Borrar filtros
                 </a>
                 @endif
@@ -81,7 +72,7 @@
         </div>
         <!-- Crear empleado -->
         <div class="flex justify-between mb-0 pr-4">
-            <a href="{{ route('admin.empleados.crear') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Crear empleado</a>
+            <a href="{{ route('admin.empleados.crear') }}" class="bg-[#ff5900] text-white px-4 py-2 rounded hover:bg-orange-700">Crear empleado</a>
         </div>
 
         <!-- Checkbox de activación -->
@@ -105,13 +96,13 @@
     <div class="overflow-x-auto">
         <div class="max-h-[500px] overflow-y-auto border border-gray-300 rounded-lg">
             <table class="min-w-full text-left bg-white">
-                <thead class="sticky top-0 bg-blue-100 z-10 shadow">
+                <thead class="sticky top-0 bg-[#ff5900] z-10 shadow">
                     <tr>
-                        <th class="p-3 text-center">N. Empleado</th>
-                        <th class="p-3 text-center">Nombre</th>
-                        <th class="p-3 text-center">Departamento</th>
-                        <th class="p-3 text-center">Puesto</th>
-                        <th class="p-3 text-center">Email</th>
+                        <th class="p-3 text-center text-white">N. Empleado</th>
+                        <th class="p-3 text-center text-white">Nombre</th>
+                        <th class="p-3 text-center text-white">Departamento</th>
+                        <th class="p-3 text-center text-white">Puesto</th>
+                        <th class="p-3 text-center text-white">Email</th>
                         <template x-if="editarActivo">
                             <th class="p-3">Acciones</th>
                         </template>

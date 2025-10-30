@@ -19,7 +19,7 @@
         <div class="flex justify-center mb-3">
             <img src="/img/aorange.svg" alt="Logo" class="h-20">
         </div>
-        <h2 class="text-2xl font-bold mb-6 text-center text-orange-500">Iniciar Sesión</h2>
+        <h2 class="text-2xl font-bold mb-6 text-center text-[#ff5900]">Iniciar Sesión</h2>
 
         @if ($errors->any())
         <div class="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
@@ -52,7 +52,7 @@
                 </button>
             </div>
             <button type="submit"
-                class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg transition">
+                class="w-full bg-[#ff5900] hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg transition">
                 Ingresar
             </button>
         </form>

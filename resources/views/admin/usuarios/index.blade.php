@@ -9,14 +9,14 @@ $roles = [
 @endphp
 <div class="p-6 bg-white rounded shadow mb-4">
     <h2 class="text-xl font-bold mb-5">Configuraciones</h2>
-    <a href="{{ route('admin.usuarios.configurar') }}" class="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700">Editar Horario</a>
+    <a href="{{ route('admin.usuarios.configurar') }}" class="bg-[#ff5900] text-white px-4 py-2 rounded hover:bg-orange-700">Editar Horario</a>
 </div>
 
 <div class="p-6 bg-white rounded shadow">
     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2 sm:gap-0">
         <h2 class="text-xl font-bold">Usuarios</h2>
         <div class="flex  gap-2 sm:gap-3.5">
-            <a href="{{ route('admin.usuarios.crear') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Crear Usuario</a>
+            <a href="{{ route('admin.usuarios.crear') }}" class="bg-[#ff5900] text-white px-4 py-2 rounded hover:bg-orange-700">Crear Usuario</a>
         </div>
     </div>
 
@@ -45,7 +45,7 @@ $roles = [
                                 {{ $usuario->yes_notifications ? 'Sí' : 'No' }}
                             </td>
                             <td class="px-4 py-2 space-x-2">
-                                <a href="{{ route('admin.usuarios.editar', $usuario->id) }}" class="text-blue-600 hover:underline">Editar</a>
+                                <a href="{{ route('admin.usuarios.editar', $usuario->id) }}" class="text-[#7a00fb] hover:underline">Editar</a>
                                 <form action="{{ route('admin.usuarios.eliminar', $usuario->id) }}" method="POST" class="inline">
                                     @csrf @method('DELETE')
                                     <button type="submit" class="text-red-600 hover:underline"

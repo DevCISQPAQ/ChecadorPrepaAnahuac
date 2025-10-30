@@ -91,7 +91,7 @@
     <!-- Loader Spinner -->
     <div id="loader" style="display: none; position: fixed; top: 50%; left: 50%;
 transform: translate(-50%, -50%); z-index: 9999;">
-        <div class="w-16 h-16 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+        <div class="w-16 h-16 border-4 border-[#ff5900] border-dashed rounded-full animate-spin"></div>
     </div>
 
 </body>

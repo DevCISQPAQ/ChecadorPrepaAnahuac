@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="flex justify-between gap-4">
-    <h2 class="md:text-2xl text-xm font-semibold text-blue-800 mb-6 text-center">Bienvenido(a), {{ Auth::user()->name }}</h2>
+    <h2 class="md:text-2xl text-xm font-semibold text-[#7a00bf] mb-6 text-center">Bienvenido(a), {{ Auth::user()->name }}</h2>
     <h2 class="md:text-xl text-xm font-semibold text-gray-800 mb-6 text-center">{{ \Carbon\Carbon::now()->locale('es')->isoFormat('dddd, D [de] MMMM [de] YYYY') }}</h2>
 </div>
 
@@ -71,9 +71,8 @@
                         <option value="administracion" {{ request('departamento') == 'administracion' ? 'selected' : '' }}>Administración</option>
                         <option value="direccion" {{ request('departamento') == 'direccion' ? 'selected' : '' }}>Dirección</option>
                         <option value="preescolar" {{ request('departamento') == 'preescolar' ? 'selected' : '' }}>Preescolar</option>
-                        <option value="primaria" {{ request('departamento') == 'primaria' ? 'selected' : '' }}>Primaria</option>
                         <option value="promocion" {{ request('departamento') == 'promocion' ? 'selected' : '' }}>Promoción</option>
-                        <option value="secundaria" {{ request('departamento') == 'secundaria' ? 'selected' : '' }}>Secundaria</option>
+                       
                         <option value="mantenimiento" {{ request('departamento') == 'mantenimiento' ? 'selected' : '' }}>Mantenimiento</option>
                     </select>
                 </div>
@@ -113,7 +112,7 @@
 
         <!-- Boton filtrar -->
         <div class="w-full sm:w-1/2 md:w-auto">
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+            <button type="submit" class="bg-[#ff5900] text-white px-4 py-2 rounded hover:bg-orange-700 w-full">
                 Filtrar
             </button>
         </div>
@@ -139,7 +138,7 @@
             <input type="hidden" name="hora_entrada" value="{{ request('hora_entrada') }}">
             <input type="hidden" name="hora_salida" value="{{ request('hora_salida') }}">
 
-            <button type="submit" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            <button type="submit" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-orange-700">
                 Crear reporte
             </button>
         </form>
@@ -148,7 +147,7 @@
     <div class="overflow-x-auto">
         <div class="max-h-[500px] overflow-y-auto border border-gray-300 rounded-lg">
             <table class="min-w-full bg-white">
-                <thead class="sticky top-0 bg-gray-700 text-white">
+                <thead class="sticky top-0 bg-[#ff5900] text-white">
                     <tr>
                         <th class="p-3 text-center">N. Empleado</th>
                         <th class="p-3 text-center">Nombre</th>
