@@ -115,7 +115,7 @@
     <p style="font-size: 10px; color: #999;">Este es un documento generado automáticamente. No responda a este mensaje.</p>
 
     <div class="footer">
-        &copy; {{ date('Y') }} Cumbres Querétaro. Todos los derechos reservados.
+        &copy; {{ date('Y') }} Prepa Anahuac. Todos los derechos reservados.
     </div>
 </body>
 

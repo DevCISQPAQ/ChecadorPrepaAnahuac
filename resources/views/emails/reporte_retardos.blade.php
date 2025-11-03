@@ -81,7 +81,7 @@
         </tr>
         <tr>
             <td style="background-color: #ecf0f1; color: #7f8c8d; text-align: center; padding: 10px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; font-size: 12px;">
-                &copy; {{ date('Y') }} Cumbres Querétaro. Todos los derechos reservados.
+                &copy; {{ date('Y') }} Prepa Anahuac Querétaro. Todos los derechos reservados.
             </td>
         </tr>
     </table>
