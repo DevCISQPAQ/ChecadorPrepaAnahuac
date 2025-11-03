@@ -42,7 +42,7 @@ if(isset($asistencias[0]) && $asistencias[0] instanceof \App\Models\Empleado) {
     <table class="w-full">
         <tr>
             <td class="w-half">
-                <img src="{{ public_path('img/aorange.svg') }}" alt="Logo" style="width: 5rem;">
+                <img src="{{ public_path('img/AORANGE.svg') }}" alt="Logo" style="width: 5rem;">
             </td>
             <td class="w-half">
                 <h2>Prepa Anáhuac Querétaro</h2>

@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>Login Administrador</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="shortcut icon" type="image/svg" href="{{ asset('/img/aorange.png') }}">
-    <link rel="shortcut icon" sizes="192x192" href="{{ asset('/img/aorange.png') }}">
+    <link rel="shortcut icon" type="image/svg" href="{{ asset('/img/AORANGE.png') }}">
+    <link rel="shortcut icon" sizes="192x192" href="{{ asset('/img/AORANGE.png') }}">
 </head>
 
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
@@ -17,7 +17,7 @@
         </div>
         @endif
         <div class="flex justify-center mb-3">
-            <img src="/img/aorange.svg" alt="Logo" class="h-20">
+            <img src="/img/AORANGE.svg" alt="Logo" class="h-20">
         </div>
         <h2 class="text-2xl font-bold mb-6 text-center text-[#ff5900]">Iniciar Sesión</h2>
 
