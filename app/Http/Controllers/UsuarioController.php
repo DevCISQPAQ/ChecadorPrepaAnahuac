@@ -134,7 +134,8 @@ class UsuarioController extends Controller
     {
         $request->validate([
             'hora_limite_entrada' => 'required|date_format:H:i',
-            'hora_limite_salida' => 'required|date_format:H:i',
+            //'hora_limite_salida' => 'required|date_format:H:i',
+            'hora_limite_tutor' => 'required|date_format:H:i',
         ]);
 
         try {
@@ -143,10 +144,15 @@ class UsuarioController extends Controller
                 ['valor' => $request->hora_limite_entrada]
             );
 
-            Configuracion::updateOrCreate(
-                ['clave' => 'hora_limite_salida'],
-                ['valor' => $request->hora_limite_salida]
+             Configuracion::updateOrCreate(
+                ['clave' => 'hora_limite_tutor'],
+                ['valor' => $request->hora_limite_tutor]
             );
+
+            //Configuracion::updateOrCreate(
+            //     ['clave' => 'hora_limite_salida'],
+            //     ['valor' => $request->hora_limite_salida]
+            // );
 
 
             return redirect()->route('admin.preferencias')->with('success', 'Configuraciones actualizadas correctamente.');

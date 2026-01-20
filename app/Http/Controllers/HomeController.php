@@ -49,7 +49,7 @@ class HomeController extends Controller
 
         if ($this->esHorarioLibre($empleado)) {
             return $this->agregarAsistenciaHorarioLibre($empleado, $ahora);
-        }
+        } 
 
         // Para horario base u otros
         return $this->agregarAsistenciaHorarioBase($empleado, $ahora, $horaLimiteSalida, $fechaHoy);
@@ -79,6 +79,13 @@ class HomeController extends Controller
         ];
     }
 
+    ////
+    private function esHorarioTutor($empleado)
+    {
+        return strtolower($empleado->tipo_horario) === 'horario tutor';
+    }
+
+  
     private function validarSalidaHorarioLibre($asistencia, $ahora)
     {
         $horaEntrada = \Carbon\Carbon::parse($asistencia->hora_entrada);
@@ -119,7 +126,8 @@ class HomeController extends Controller
             }
 
             $horaLimiteCompleta = \Carbon\Carbon::parse($fechaHoy . ' ' . Configuracion::getValor('hora_limite_entrada', '07:35:00'));
-            return $this->registrarEntrada($empleado, $ahora, $horaLimiteCompleta);
+            $horaLimiteCompletaTutor = \Carbon\Carbon::parse($fechaHoy . ' ' . Configuracion::getValor('hora_limite_entradaTutor', '07:00:00'));
+            return $this->registrarEntrada($empleado, $ahora, $horaLimiteCompleta, $horaLimiteCompletaTutor);
         }
 
         $asistencia = $this->obtenerAsistenciaHoy($empleado);
@@ -148,12 +156,16 @@ class HomeController extends Controller
             ->first();
     }
 
-    private function registrarEntrada($empleado, $ahora, $horaLimiteCompleta = null)
+    private function registrarEntrada($empleado, $ahora, $horaLimiteCompleta = null, $horaLimiteCompletaTutor = null)
     {
         $retardo = false;
 
         if ($horaLimiteCompleta) {
-            $retardo = $ahora->greaterThan($horaLimiteCompleta);
+            if ($this->esHorarioTutor($empleado)) {
+                $retardo = $ahora->greaterThan($horaLimiteCompletaTutor);
+            } else {
+                $retardo = $ahora->greaterThan($horaLimiteCompleta);
+            }
         }
 
         Asistencia::create([
@@ -193,12 +205,12 @@ class HomeController extends Controller
 
         if (strtolower($empleado->tipo_horario) === 'horario base') {
             $horaE = null;
-            $retardo = true; 
+            $retardo = true;
         }
 
         Asistencia::create([
             'empleado_id' => $empleado->id,
-            'hora_entrada' => $horaE, 
+            'hora_entrada' => $horaE,
             'hora_salida' => $ahora,
             'retardo' => $retardo,
         ]);

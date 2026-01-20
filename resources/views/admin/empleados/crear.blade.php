@@ -66,6 +66,7 @@
                     <option value="" disabled selected>Seleccione una opción</option>
                     <option value="Horario Base">Horario Base</option>
                     <option value="Horario Libre">Horario Libre</option>
+                    <option value="Horario Tutor">Horario Tutor</option>
                 </select>
             </div>
 

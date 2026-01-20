@@ -72,6 +72,7 @@
                 <select name="tipo_horario" class="w-full mt-1 px-4 py-2 border rounded focus:ring focus:ring-blue-200">
                     <option value="Horario Base" {{ $empleado->tipo_horario === 'Horario Base' ? 'selected' : '' }}>Horario Base</option>
                     <option value="Horario Libre" {{ $empleado->tipo_horario === 'Horario Libre' ? 'selected' : '' }}>Horario Libre</option>
+                    <option value="Horario Tutor" {{ $empleado->tipo_horario === 'Horario Tutor' ? 'selected' : '' }}>Horario Tutor</option>
                 </select>
             </div>
 
