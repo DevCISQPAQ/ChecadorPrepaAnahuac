@@ -126,7 +126,7 @@ class HomeController extends Controller
             }
 
             $horaLimiteCompleta = \Carbon\Carbon::parse($fechaHoy . ' ' . Configuracion::getValor('hora_limite_entrada', '07:35:00'));
-            $horaLimiteCompletaTutor = \Carbon\Carbon::parse($fechaHoy . ' ' . Configuracion::getValor('hora_limite_entradaTutor', '07:00:00'));
+            $horaLimiteCompletaTutor = \Carbon\Carbon::parse($fechaHoy . ' ' . Configuracion::getValor('hora_limite_tutor', '07:00:00'));
             return $this->registrarEntrada($empleado, $ahora, $horaLimiteCompleta, $horaLimiteCompletaTutor);
         }
 
