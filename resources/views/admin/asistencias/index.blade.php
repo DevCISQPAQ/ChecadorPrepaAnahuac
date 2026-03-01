@@ -72,7 +72,7 @@
                         <option value="direccion" {{ request('departamento') == 'direccion' ? 'selected' : '' }}>Dirección</option>
                         <option value="Preparatoria" {{ request('departamento') == 'Preparatoria' ? 'selected' : '' }}>Preparatoria</option>
                         <option value="promocion" {{ request('departamento') == 'promocion' ? 'selected' : '' }}>Promoción</option>
-                       
+
                         <option value="mantenimiento" {{ request('departamento') == 'mantenimiento' ? 'selected' : '' }}>Mantenimiento</option>
                     </select>
                 </div>
@@ -127,8 +127,8 @@
         @endif
     </form>
 
-    <div class="flex justify-end mb-1 pr-4 pt-5">
-        <form method="GET" action="{{ route('admin.asistencias.reporte') }}" target="_blank">
+    <div class="flex justify-end gap-2 mb-1 pr-4 pt-5">
+        <form method="GET" action="{{ route('admin.asistencias.reporte.pdf') }}" target="_blank">
             <!-- Envía los filtros actuales como inputs ocultos -->
             <input type="hidden" name="buscar" value="{{ request('buscar') }}">
             <input type="hidden" name="fecha_inicio" value="{{ request('fecha_inicio') }}">
@@ -142,16 +142,35 @@
                 Crear reporte
             </button>
         </form>
+
+        <form method="GET" action="{{ route('admin.asistencias.reporte.excel') }}">
+            <!-- Envía los filtros actuales como inputs ocultos -->
+            <input type="hidden" name="buscar" value="{{ request('buscar') }}">
+            <input type="hidden" name="fecha_inicio" value="{{ request('fecha_inicio') }}">
+            <input type="hidden" name="fecha_fin" value="{{ request('fecha_fin') }}">
+            <input type="hidden" name="departamento" value="{{ request('departamento') }}">
+            <input type="hidden" name="retardo" value="{{ request('retardo') }}">
+            <input type="hidden" name="hora_entrada" value="{{ request('hora_entrada') }}">
+            <input type="hidden" name="hora_salida" value="{{ request('hora_salida') }}">
+
+            <button type="submit"
+                class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                Exportar Excel
+            </button>
+        </form>
     </div>
     <!-- Tabla de asistencias -->
     <div class="overflow-x-auto">
         <div class="max-h-[500px] overflow-y-auto border border-gray-300 rounded-lg">
             <table class="min-w-full bg-white">
-                <thead class="sticky top-0 bg-[#ff5900] text-white">
+                <thead class="sticky top-0 bg-gray-700 text-white">
                     <tr>
                         <th class="p-3 text-center">N. Empleado</th>
                         <th class="p-3 text-center">Nombre</th>
                         <th class="p-3 text-center">Departamento</th>
+                        @if($hayFiltros)
+                        <th class="p-3 text-center">Fecha</th>
+                        @endif
                         <th class="p-3 text-center">Hora de entrada</th>
                         <th class="p-3 text-center">Hora de salida</th>
                         <th class="p-3 text-center">Retardo</th>
@@ -164,6 +183,11 @@
                         <td class="p-3 text-center">{{ $empleado->id }}</td>
                         <td class="p-3 text-center">{{ $empleado->nombres . ' ' . $empleado->apellido_paterno . ' ' . $empleado->apellido_materno }}</td>
                         <td class="p-3 text-center">{{ $empleado->departamento }}</td>
+                        @if($hayFiltros)
+                        <td class="p-3 text-center">
+                            {{ $asistencia->created_at->format('d/m/Y') }}
+                        </td>
+                        @endif
                         <td class="p-3 text-center text-red-600 font-semibold">Sin registro</td>
                         <td class="p-3 text-center text-red-600 font-semibold">Sin registro</td>
                         <td class="p-3 text-center text-red-600 font-semibold">Sin registro</td>
@@ -180,10 +204,17 @@
                         <td class="p-3 text-center">{{ $asistencia->empleado_id ?? 0}}</td>
                         <td class="p-3 text-center">{{ $empleado ? $empleado->nombres . ' ' . $empleado->apellido_paterno . ' ' . $empleado->apellido_materno : 'N/A' }}</td>
                         <td class="p-3 text-center">{{ $empleado->departamento ?? 'N/A' }}</td>
-                        <td class="p-3 text-center">{{ $asistencia->hora_entrada ? $asistencia->hora_entrada->format('H:i') : 'N/A' }}</td>
-                        <td class="p-3 text-center">{{ $asistencia->hora_salida ? $asistencia->hora_salida->format('H:i') : 'N/A' }}</td>
-                        <td class="p-3 text-center {{ $asistencia->retardo ? 'text-red-600 font-semibold' : 'text-green-600 font-semibold' }}">
-                            {{ $asistencia->retardo ? 'Sí' : 'No' }}
+                        @if($hayFiltros)
+                        <td class="p-3 text-center">
+                            {{ $asistencia->created_at->format('d/m/Y') }}
+                        </td>
+                        @endif
+                        <td class="p-3 text-center {{ !$asistencia->hora_entrada ? 'text-red-600 font-semibold' : '' }}">{{ $asistencia->hora_entrada ? $asistencia->hora_entrada->format('H:i'): 'Sin registro'}}</td>
+                        <td class="p-3 text-center {{ !$asistencia->hora_salida ? 'text-red-600 font-semibold' : '' }}">{{ $asistencia->hora_salida? $asistencia->hora_salida->format('H:i') : 'Sin registro'}}</td>
+
+                        <td class="p-3 text-center font-semibold @if(is_null($asistencia->hora_entrada) && is_null($asistencia->hora_salida))  text-red-600 @elseif((int) $asistencia->retardo == 1) text-red-600  @else text-green-600 @endif">
+                            @if(is_null($asistencia->hora_entrada) && is_null($asistencia->hora_salida)) Sin registro @elseif((int) $asistencia->retardo == 1) Sí
+                            @elseif((int) $asistencia->retardo == 0) No @endif
                         </td>
                     </tr>
                     @empty
@@ -200,8 +231,10 @@
     </div>
 
     <!-- Paginación -->
-    <div class="mt-4">
+   <div class="mt-4">
+        @if(!$hayFiltros)
         {{ $asistencias->links() }}
+        @endif
     </div>
 </div>
 

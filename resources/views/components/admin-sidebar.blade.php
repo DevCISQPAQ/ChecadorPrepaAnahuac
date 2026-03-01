@@ -2,7 +2,7 @@
     {{-- Título del panel --}}
     <div class="p-6 font-bold text-dm text-[#ff5900] text-center border-b border-violet-300">
         <div class="flex justify-center mb-3">
-            <img src="/img/aorange.svg" alt="Logo" class="h-24">
+            <img src="/img/AORANGE.svg" alt="Logo" class="h-24">
         </div>
         Panel de Control de Asistencias
     </div>
